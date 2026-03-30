@@ -1,0 +1,87 @@
+SOLARHARVEST ENERGY — SERIES B PITCH DECK
+Confidential — For Investor Use Only
+
+EXECUTIVE SUMMARY
+
+SolarHarvest Energy is a distributed solar microgrid company providing affordable, clean electricity to off-grid communities across East Africa. Founded in 2019 by Dr. Amina Okafor and James Mwangi in Nairobi, Kenya, the company has grown to operate 47 microgrids serving over 120,000 households.
+
+Our mission: universal energy access through decentralized solar infrastructure that is affordable, reliable, and community-owned.
+
+FOUNDING STORY
+
+Dr. Amina Okafor, a renewable energy engineer from the University of Cape Town, witnessed firsthand the energy poverty affecting rural Kenyan communities while conducting field research in 2017. Partnering with James Mwangi, a veteran of the mobile money industry in Nairobi, they developed a pay-as-you-go solar microgrid model that leverages M-Pesa for seamless payments.
+
+The company was incorporated in Nairobi in 2019 and deployed its first microgrid in Turkana County within six months.
+
+IMPACT THESIS
+
+Target Beneficiaries: Rural and peri-urban households in Kenya, Tanzania, and Uganda currently relying on kerosene or diesel for lighting and power.
+
+Theory of Change: By providing affordable solar electricity ($0.15/kWh vs. $0.80+/kWh for kerosene equivalent), we enable households to save money, children to study after dark, and local businesses to extend operating hours. Each microgrid creates 5-8 local jobs for maintenance and operations.
+
+SDG Alignment: SDG 7 (Affordable and Clean Energy), SDG 13 (Climate Action), SDG 8 (Decent Work), SDG 1 (No Poverty)
+
+BUSINESS MODEL
+
+Revenue Model: Pay-as-you-go tariff ($0.15/kWh), connection fees ($25 one-time), and commercial/institutional contracts (schools, health clinics) at premium rates.
+
+Unit Economics:
+- Average microgrid serves 2,500 households
+- Installation cost: $180,000 per microgrid
+- Monthly revenue per microgrid: $12,500
+- Payback period: 18 months
+- Gross margin: 62%
+
+Customer Segments: Residential (75%), Commercial/SME (15%), Institutional (10%)
+
+MARKET OPPORTUNITY
+
+Total Addressable Market: 600 million people in Sub-Saharan Africa lack electricity access. East Africa alone represents a $14B annual opportunity for off-grid energy.
+
+Market Growth: Off-grid solar market growing at 25% CAGR in East Africa.
+
+Regulatory Tailwinds: Kenya's Energy Act 2019 provides tax incentives for mini-grid operators. Tanzania's Rural Electrification Agency offers co-investment programs.
+
+TEAM
+
+Dr. Amina Okafor, CEO — PhD Renewable Energy (UCT), 10 years in solar deployment across Africa
+James Mwangi, COO — Former VP at Safaricom M-Pesa division, 15 years fintech experience
+Sarah Chen, CTO — MIT-trained electrical engineer, previously at Tesla Energy
+David Kimani, CFO — Former investment banker at Standard Chartered Bank Nairobi
+Board: Includes representatives from Acumen Fund, CDC Group, and Energy Access Ventures
+
+FINANCIAL PROFILE
+
+2021 Revenue: $2.1M
+2022 Revenue: $5.8M
+2023 Revenue: $14.2M (projected)
+Burn rate: $350K/month (reaching break-even Q3 2024)
+Total funding to date: $22M (Seed: $1.5M, Series A: $8M, Bridge: $2.5M)
+Series B target: $25M at $120M pre-money valuation
+
+IMPACT MEASUREMENT
+
+Framework: IRIS+ aligned metrics
+KPIs tracked:
+- Households connected: 120,000+
+- CO2 avoided: 45,000 tonnes annually
+- Jobs created: 380 direct, 1,200+ indirect
+- Average household savings: $180/year on energy costs
+- Hours of light per household per day: 6.5 (up from 1.2 with kerosene)
+
+Third-party verification: Annual impact audit by 60 Decibels
+
+RISK FACTORS
+
+- Currency risk: Revenue in KES/TZS, costs partially in USD
+- Regulatory risk: Tariff regulation changes could affect pricing
+- Weather/climate risk: Extended cloud cover reduces generation
+- Competition: M-Kopa, d.light expanding in similar markets
+- Key person risk: Heavy reliance on CEO's government relationships
+
+ESG CONSIDERATIONS
+
+Environmental: 100% renewable energy, responsible battery recycling program, minimal land use
+Social: Living wage for all employees, 45% female workforce, community ownership model
+Governance: Independent board majority, quarterly ESG reporting, whistleblower policy
+Controversies: None reported

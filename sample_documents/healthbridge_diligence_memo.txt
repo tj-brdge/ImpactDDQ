@@ -1,0 +1,96 @@
+INVESTMENT DILIGENCE MEMO — HEALTHBRIDGE DIAGNOSTICS
+Series A Due Diligence | Prepared for: Impact Ventures Fund III
+Date: October 2023
+
+EXECUTIVE SUMMARY
+
+HealthBridge Diagnostics, based in Medellín, Colombia, develops portable AI-powered diagnostic devices for rural and underserved clinics across Latin America. Founded in 2021 by Dr. María Elena Rodríguez and Dr. Carlos Gutierrez, the company has deployed 340 devices across Colombia, Peru, and Ecuador, enabling lab-quality testing for 15+ conditions without the need for specialized laboratory equipment or trained pathologists.
+
+The company is raising a $10M Series A to expand to Mexico, Brazil, and Central America, and to add 8 new diagnostic capabilities to its platform.
+
+TECHNOLOGY & PRODUCT
+
+The HealthBridge device is a tablet-sized diagnostic unit that uses computer vision and machine learning to analyze blood samples, urine samples, and tissue slides. Key capabilities:
+
+- Complete blood count (CBC) with 96% accuracy vs. lab standards
+- Malaria rapid detection (98.5% sensitivity)
+- Diabetes screening (HbA1c)
+- Tuberculosis screening
+- Cervical cancer pre-screening
+- 10+ additional tests in development
+
+The AI models were trained on datasets from Hospital Pablo Tobón Uribe in Medellín and validated with the Pan American Health Organization (PAHO).
+
+Cost per test: $2-8 (vs. $15-50 for equivalent lab tests)
+Device cost: $4,500 (vs. $50,000+ for traditional lab equipment)
+
+FOUNDING TEAM
+
+Dr. María Elena Rodríguez (CEO) — Biomedical engineer, PhD from Universidad de los Andes. Former researcher at Fundación Valle del Lili hospital in Cali. Published 20+ papers on point-of-care diagnostics.
+
+Dr. Carlos Gutierrez (CTO) — Computer scientist specializing in medical imaging AI. Previously at Google Health in Mountain View, California. Led development of dermatology AI model.
+
+Adriana Morales (COO) — MBA from INSEAD, former McKinsey consultant focused on healthcare delivery in emerging markets.
+
+Advisory Board: Includes Dr. Jorge Ramírez (former Minister of Health, Colombia), Prof. Lisa Wang (Stanford School of Medicine), and executives from Roche Diagnostics and Abbott.
+
+MARKET OPPORTUNITY
+
+Latin America: 150,000+ rural clinics with limited or no laboratory access
+TAM: $4.2B for point-of-care diagnostics in LATAM
+SAM: $800M (clinics in target countries)
+SOM: $120M (achievable in 5 years with current trajectory)
+
+Regulatory: Colombian INVIMA approval received. Peruvian DIGEMID approval pending. Brazilian ANVISA process to begin 2024.
+
+Competition: Limited direct competition in AI-powered portable diagnostics. Existing competitors (Abbott i-STAT, Cepheid GeneXpert) are significantly more expensive and less portable.
+
+FINANCIAL PROFILE
+
+2022 Revenue: $0.4M (first commercial deployments)
+2023 Revenue (projected): $2.1M
+2024 Revenue (projected): $6.5M
+2025 Revenue (projected): $18M
+
+Revenue model: Device sales (40%), per-test consumables (35%), software licensing/data analytics (25%)
+Gross margin: 58% (expected to reach 70% at scale)
+
+Funding history:
+- Pre-seed: $500K (founders + angel investors from Medellín tech community)
+- Seed: $2.5M (led by IGNIA, with participation from Mercy Corps Ventures)
+
+Burn rate: $280K/month
+Runway: 10 months at current burn
+
+IMPACT MEASUREMENT
+
+KPIs:
+- Devices deployed: 340 across 3 countries
+- Tests performed: 285,000+ total
+- Patients reached: 180,000+ unique individuals
+- Critical diagnoses detected: 12,000+ (conditions that would have gone undiagnosed)
+- Average time to diagnosis: reduced from 14 days to 45 minutes
+- Cost savings per patient: 60-80% vs. traditional lab referral
+
+Framework: Aligned with IRIS+ Health metrics (PI4060, PI2659)
+SDG Alignment: SDG 3 (Good Health and Well-Being), SDG 10 (Reduced Inequalities), SDG 9 (Industry, Innovation and Infrastructure)
+
+RISK ANALYSIS
+
+1. Regulatory risk: Each new country requires separate medical device approval (6-18 month process)
+2. Accuracy risk: AI model performance in diverse populations must be continuously validated
+3. Competition risk: Large diagnostic companies (Roche, Abbott) could develop competing products
+4. Reimbursement risk: Government health insurance coverage for AI diagnostics uncertain
+5. Key person risk: Dr. Rodríguez is the primary relationship holder with PAHO and government health ministries
+6. Supply chain: Specialized components sourced from Shenzhen, China — geopolitical risk
+
+ESG PROFILE
+
+Environmental: Low energy consumption devices (solar-chargeable), minimal waste per test, recycling program for consumables
+Social: 60% female leadership team, local manufacturing partnership in Medellín, training program for rural health workers (400+ trained)
+Governance: Board includes independent directors, quarterly impact reporting, data privacy framework compliant with Colombian and EU standards
+Controversies: None
+
+RECOMMENDATION
+
+Strong investment candidate. HealthBridge addresses a genuine access gap in healthcare diagnostics with a technically differentiated product and experienced team. Key risks are regulatory timeline and competitive moat durability. Recommend proceeding to term sheet with key conditions around regulatory milestones and clinical validation benchmarks.

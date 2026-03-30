@@ -1,0 +1,85 @@
+ANALYST RESEARCH NOTES — MICROFINANCE PLUS
+Prepared by: Research Team, Impact Capital Partners
+Date: November 2023
+
+COMPANY OVERVIEW
+
+MicroFinance Plus is a mobile-first lending platform headquartered in Lagos, Nigeria, serving smallholder farmers and micro-entrepreneurs across West Africa. Founded in 2018 by Chidi Eze and Fatima Bello, the company has grown rapidly to serve over 500,000 active borrowers with a remarkable 97% repayment rate.
+
+The platform operates primarily through USSD and mobile app interfaces, making it accessible even on feature phones. Loan sizes range from $50 to $5,000 with terms of 3-12 months.
+
+KEY PERSONNEL NOTES
+
+Chidi Eze (CEO) — Previously led microfinance operations at Access Bank Nigeria. Strong relationships with Central Bank of Nigeria regulatory team. Stanford MBA.
+
+Fatima Bello (COO) — Background in agricultural extension services with the Nigerian Ministry of Agriculture. Deep understanding of smallholder farmer economics. Named to Forbes Africa 30 Under 30 in 2020.
+
+Oluwaseun Adeyemi (CTO) — Former Andela fellow, built the core lending algorithm. The credit scoring model uses alternative data (mobile money transactions, crop cycle patterns, social network analysis).
+
+Board includes representatives from Omidyar Network, Mastercard Foundation, and a former Governor of the Central Bank of Nigeria.
+
+FINANCIAL ANALYSIS
+
+Revenue Breakdown (2023):
+- Interest income: $8.2M (average APR 24%)
+- Processing fees: $1.8M
+- Insurance premiums (crop insurance): $0.9M
+- Total revenue: $10.9M
+
+Growth trajectory:
+- 2020: $1.2M revenue, 50,000 borrowers
+- 2021: $3.4M revenue, 150,000 borrowers
+- 2022: $6.8M revenue, 320,000 borrowers
+- 2023: $10.9M revenue, 500,000 borrowers
+
+Operating costs: $8.5M (78% cost-to-income ratio)
+Net margin: 15% (improving from 5% in 2022)
+
+Total funding: $35M across Seed ($2M), Series A ($12M), Series B ($21M)
+Series B led by Partech Africa at $85M valuation.
+
+IMPACT ASSESSMENT
+
+The company's impact thesis centers on financial inclusion for underserved populations in Lagos, Abuja, Kano, and increasingly rural areas of Nigeria, Ghana, and Senegal.
+
+Key impact metrics:
+- 500,000+ active borrowers (65% women, 70% rural)
+- Average income increase of 40% for borrowers after 2 loan cycles
+- 180,000 smallholder farmers accessing credit for the first time
+- Crop insurance payouts: $2.1M disbursed in 2023 (covering 45,000 farmers)
+- Financial literacy training completed by 280,000 users
+
+Framework: Custom impact measurement framework aligned with IRIS+ and the Universal Standards for Social Performance Management.
+
+Verification: Annual social audit by MicroFinanza Rating (certified by CGAP).
+
+MARKET POSITION
+
+Nigeria alone has 40M+ unbanked adults. West Africa represents a $25B credit gap for MSMEs.
+
+Key competitors:
+- FairMoney (Nigeria) — $42M raised, consumer lending focus
+- Carbon (Nigeria) — Digital banking, less agriculture focus
+- Moniepoint — Business payments, expanding to lending
+
+MicroFinance Plus differentiates through agricultural specialization, the crop insurance bundle, and USSD accessibility for rural users.
+
+RISK ASSESSMENT
+
+1. Regulatory: Central Bank of Nigeria tightening digital lending regulations. New licensing requirements expected 2024.
+2. Currency: Naira volatility (NGN depreciated 40% in 2023). Dollar-denominated investors face FX exposure.
+3. Concentration: 80% of portfolio in Nigeria. Ghana and Senegal still early.
+4. Credit risk: 97% repayment impressive but untested through economic downturn.
+5. Technology: Core banking system migration planned for Q1 2024 — execution risk.
+6. Political: Nigerian elections and policy uncertainty.
+
+ESG NOTES
+
+Environmental: Paperless operations, solar-powered branch offices in Lagos and Abuja
+Social: Strong gender lens (65% women borrowers), living wage commitment, no aggressive collection practices
+Governance: Independent audit committee, published responsible lending principles
+Red flags: None identified
+
+RECOMMENDATION
+
+Strong candidate for portfolio inclusion. The combination of high growth, improving unit economics, clear impact metrics, and experienced management team makes this an attractive Series B+ opportunity. Key monitoring items: Naira exposure, regulatory developments, and credit performance through economic cycles.
