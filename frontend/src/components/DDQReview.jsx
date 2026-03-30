@@ -27,7 +27,7 @@ function ConfidenceBadge({ level }) {
   );
 }
 
-export default function DDQReview({ ddqOutput, onApprove, onSendBack }) {
+export default function DDQReview({ ddqOutput, templateSections, onApprove, onSendBack }) {
   const [sections, setSections] = useState(ddqOutput || {});
   const [editing, setEditing] = useState(null);
   const [feedback, setFeedback] = useState({});
@@ -59,7 +59,8 @@ export default function DDQReview({ ddqOutput, onApprove, onSendBack }) {
 
       {Object.entries(sections).map(([key, data]) => {
         if (!data || typeof data !== "object") return null;
-        const label = SECTION_LABELS[key] || key.replace(/_/g, " ");
+        const templateLabel = templateSections?.find((s) => s.key === key)?.title;
+        const label = templateLabel || SECTION_LABELS[key] || key.replace(/_/g, " ");
         const isEditing = editing === key;
         const sectionFeedback = feedback[key];
 

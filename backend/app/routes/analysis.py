@@ -2,30 +2,42 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
 from app.database import get_db
-from app.models import ResearchOutput
-from app.claude_client import extract_ddq, suggest_tags, DDQ_SYSTEM_PROMPT
+from app.models import ResearchOutput, DDQTemplate
+from app.claude_client import extract_ddq, suggest_tags, DDQ_SYSTEM_PROMPT, build_system_prompt
 from app.anonymizer import re_inject
 
 router = APIRouter(prefix="/api/analysis", tags=["analysis"])
 
 
 @router.get("/system-prompt")
-def get_system_prompt():
+def get_system_prompt(template_id: int = None, db: Session = Depends(get_db)):
     """Return the DDQ system prompt for display in the inspection screen."""
-    return {"system_prompt": DDQ_SYSTEM_PROMPT}
+    if template_id:
+        template = db.query(DDQTemplate).filter(DDQTemplate.id == template_id).first()
+        if template:
+            return {"system_prompt": build_system_prompt(template.sections), "template_name": template.name}
+    return {"system_prompt": DDQ_SYSTEM_PROMPT, "template_name": "ILPA Impact DDQ (Default)"}
 
 
 @router.post("/extract")
-async def run_extraction(payload: dict):
+async def run_extraction(payload: dict, db: Session = Depends(get_db)):
     """Run Claude DDQ extraction on anonymized text."""
     anonymized_text = payload.get("anonymized_text", "")
     mapping = payload.get("mapping", {})
+    template_id = payload.get("template_id")
 
     if not anonymized_text:
         raise HTTPException(status_code=400, detail="No text provided")
 
+    # Get template sections if specified
+    template_sections = None
+    if template_id:
+        template = db.query(DDQTemplate).filter(DDQTemplate.id == template_id).first()
+        if template:
+            template_sections = template.sections
+
     # Call Claude with anonymized text
-    ddq_output = extract_ddq(anonymized_text)
+    ddq_output = extract_ddq(anonymized_text, template_sections)
 
     # Re-inject real entity names
     re_injected = {}
@@ -64,8 +76,11 @@ async def save_research_output(payload: dict, db: Session = Depends(get_db)):
     if not company_id or not ddq_output:
         raise HTTPException(status_code=400, detail="company_id and ddq_output required")
 
+    template_id = payload.get("template_id")
+
     output = ResearchOutput(
         company_id=company_id,
+        template_id=template_id,
         ddq_output=ddq_output,
         source_documents=source_documents,
         status="approved",

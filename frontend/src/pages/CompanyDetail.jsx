@@ -152,6 +152,15 @@ export default function CompanyDetail() {
                           {output.source_documents.length} source doc(s)
                         </span>
                       )}
+                      {output.source_documents?.map((doc, j) => {
+                        const label = typeof doc === "object" ? doc.doc_type : null;
+                        if (!label) return null;
+                        return (
+                          <span key={j} className="px-1.5 py-0.5 bg-slate-100 text-slate-500 rounded text-xs">
+                            {label.replace(/_/g, " ")}
+                          </span>
+                        );
+                      })}
                     </div>
                   </div>
                   <div className="flex items-center gap-3">

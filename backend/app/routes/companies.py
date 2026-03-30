@@ -1,10 +1,39 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
 from app.database import get_db
 from app.models import Company, ResearchOutput
 
 router = APIRouter(prefix="/api/companies", tags=["companies"])
+
+
+@router.post("")
+def create_company(payload: dict, db: Session = Depends(get_db)):
+    required = ["name", "sector", "stage", "location", "founded_year", "description"]
+    for field in required:
+        if not payload.get(field):
+            raise HTTPException(status_code=400, detail=f"{field} is required")
+
+    company = Company(
+        name=payload["name"],
+        sector=payload["sector"],
+        stage=payload["stage"],
+        location=payload["location"],
+        founded_year=int(payload["founded_year"]),
+        description=payload["description"],
+    )
+    db.add(company)
+    db.commit()
+    db.refresh(company)
+    return {
+        "id": company.id,
+        "name": company.name,
+        "sector": company.sector,
+        "stage": company.stage,
+        "location": company.location,
+        "founded_year": company.founded_year,
+        "description": company.description,
+    }
 
 
 @router.get("")

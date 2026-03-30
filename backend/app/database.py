@@ -26,7 +26,7 @@ def get_db():
 
 
 def seed_database():
-    from app.models import Company, Tag
+    from app.models import Company, Tag, DDQTemplate
     db = SessionLocal()
 
     if db.query(Company).count() > 0:
@@ -129,7 +129,59 @@ def seed_database():
         Tag(name="water & sanitation"),
     ]
 
+    default_template = DDQTemplate(
+        name="ILPA Impact DDQ",
+        description="Standard ILPA-style due diligence questionnaire for impact investing",
+        is_default=True,
+        sections=[
+            {"key": "company_overview", "title": "Company Overview", "guidance": "Business description, founding story, mission, core products/services"},
+            {"key": "impact_thesis", "title": "Impact Thesis", "guidance": "Theory of change, target beneficiaries, intended social/environmental outcomes, alignment with SDGs"},
+            {"key": "business_model", "title": "Business Model", "guidance": "Revenue model, unit economics, customer segments, competitive positioning"},
+            {"key": "market_opportunity", "title": "Market Opportunity", "guidance": "TAM/SAM/SOM, market trends, regulatory tailwinds/headwinds"},
+            {"key": "team_governance", "title": "Team & Governance", "guidance": "Key leadership, board composition, governance structure, key person risk"},
+            {"key": "financial_profile", "title": "Financial Profile", "guidance": "Revenue, growth trajectory, profitability/burn, funding history"},
+            {"key": "impact_measurement", "title": "Impact Measurement", "guidance": "KPIs tracked, measurement framework (IRIS+, custom), third-party verification"},
+            {"key": "risk_factors", "title": "Risk Factors", "guidance": "Key business risks, impact risks, regulatory risks, concentration risks"},
+            {"key": "esg_considerations", "title": "ESG Considerations", "guidance": "Environmental practices, labor/social policies, governance standards, controversies"},
+        ],
+    )
+
+    quick_screen_template = DDQTemplate(
+        name="Quick Screen",
+        description="Abbreviated screening template for initial pipeline review",
+        is_default=False,
+        sections=[
+            {"key": "overview", "title": "Company Overview", "guidance": "One-paragraph summary of what the company does and its mission"},
+            {"key": "impact_fit", "title": "Impact Fit", "guidance": "Does this company align with our impact thesis? Key impact metrics and SDG alignment"},
+            {"key": "financials_summary", "title": "Financials Summary", "guidance": "Revenue, growth rate, funding stage, burn rate — key numbers only"},
+            {"key": "key_risks", "title": "Key Risks", "guidance": "Top 3-5 risks that could affect investment or impact"},
+            {"key": "recommendation", "title": "Recommendation", "guidance": "Pass/further diligence/strong interest — with brief rationale"},
+        ],
+    )
+
+    deep_dive_template = DDQTemplate(
+        name="Deep Dive Technical",
+        description="Detailed technical and operational due diligence template",
+        is_default=False,
+        sections=[
+            {"key": "company_overview", "title": "Company Overview", "guidance": "Business description, founding story, mission, core products/services"},
+            {"key": "impact_thesis", "title": "Impact Thesis", "guidance": "Theory of change, target beneficiaries, intended social/environmental outcomes, alignment with SDGs"},
+            {"key": "business_model", "title": "Business Model", "guidance": "Revenue model, unit economics, customer segments, competitive positioning"},
+            {"key": "market_opportunity", "title": "Market Opportunity", "guidance": "TAM/SAM/SOM, market trends, regulatory tailwinds/headwinds"},
+            {"key": "team_governance", "title": "Team & Governance", "guidance": "Key leadership, board composition, governance structure, key person risk"},
+            {"key": "financial_profile", "title": "Financial Profile", "guidance": "Revenue, growth trajectory, profitability/burn, funding history"},
+            {"key": "impact_measurement", "title": "Impact Measurement", "guidance": "KPIs tracked, measurement framework (IRIS+, custom), third-party verification"},
+            {"key": "risk_factors", "title": "Risk Factors", "guidance": "Key business risks, impact risks, regulatory risks, concentration risks"},
+            {"key": "esg_considerations", "title": "ESG Considerations", "guidance": "Environmental practices, labor/social policies, governance standards, controversies"},
+            {"key": "technology_product", "title": "Technology & Product", "guidance": "Tech stack, IP/patents, product roadmap, technical moat, scalability"},
+            {"key": "operations", "title": "Operations & Supply Chain", "guidance": "Operational model, key suppliers, geographic footprint, capacity constraints"},
+            {"key": "legal_regulatory", "title": "Legal & Regulatory", "guidance": "Licensing, compliance requirements, pending litigation, regulatory approvals needed"},
+            {"key": "exit_strategy", "title": "Exit Strategy", "guidance": "Potential acquirers, IPO pathway, comparable exits, expected timeline and multiples"},
+        ],
+    )
+
     db.add_all(companies)
     db.add_all(tags)
+    db.add_all([default_template, quick_screen_template, deep_dive_template])
     db.commit()
     db.close()

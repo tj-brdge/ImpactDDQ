@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.database import Base, engine, seed_database
-from app.routes import companies, documents, analysis, tags
+from app.routes import companies, documents, analysis, tags, templates
 
 Base.metadata.create_all(bind=engine)
 
@@ -20,6 +20,7 @@ app.include_router(companies.router)
 app.include_router(documents.router)
 app.include_router(analysis.router)
 app.include_router(tags.router)
+app.include_router(templates.router)
 
 
 @app.on_event("startup")

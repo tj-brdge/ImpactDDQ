@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Text, Float, DateTime, ForeignKey, Table, JSON
+from sqlalchemy import Column, Integer, String, Text, Float, DateTime, ForeignKey, Table, JSON, Boolean
 from sqlalchemy.orm import relationship
 from datetime import datetime, timezone
 
@@ -32,14 +32,16 @@ class ResearchOutput(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     company_id = Column(Integer, ForeignKey("companies.id"), nullable=False)
+    template_id = Column(Integer, ForeignKey("ddq_templates.id"), nullable=True)
     ddq_output = Column(JSON, nullable=False)
-    source_documents = Column(JSON)  # list of original filenames
+    source_documents = Column(JSON)  # list of {filename, doc_type}
     status = Column(String(50), default="approved")  # draft, approved
     analyst_feedback = Column(JSON)  # per-section feedback
     created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))
     updated_at = Column(DateTime, default=lambda: datetime.now(timezone.utc), onupdate=lambda: datetime.now(timezone.utc))
 
     company = relationship("Company", back_populates="research_outputs")
+    template = relationship("DDQTemplate")
     tags = relationship("Tag", secondary=research_output_tags, back_populates="research_outputs")
 
 
@@ -50,3 +52,15 @@ class Tag(Base):
     name = Column(String(100), nullable=False, unique=True)
 
     research_outputs = relationship("ResearchOutput", secondary=research_output_tags, back_populates="tags")
+
+
+class DDQTemplate(Base):
+    __tablename__ = "ddq_templates"
+
+    id = Column(Integer, primary_key=True, index=True)
+    name = Column(String(255), nullable=False)
+    description = Column(Text, nullable=True)
+    sections = Column(JSON, nullable=False)  # list of {key, title, guidance}
+    is_default = Column(Boolean, default=False)
+    created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))
+    updated_at = Column(DateTime, default=lambda: datetime.now(timezone.utc), onupdate=lambda: datetime.now(timezone.utc))

@@ -26,12 +26,38 @@ Respond in JSON format with each section as a key (use snake_case like "company_
 Return ONLY valid JSON, no markdown fencing or extra text."""
 
 
-def extract_ddq(anonymized_text):
+def build_system_prompt(template_sections=None):
+    """Build a system prompt from template sections. Falls back to default if none provided."""
+    if not template_sections:
+        return DDQ_SYSTEM_PROMPT
+
+    sections_text = "\n".join(
+        f'{i+1}. **{s["title"]}** — {s["guidance"]}'
+        for i, s in enumerate(template_sections)
+    )
+    keys_hint = ", ".join(f'"{s["key"]}"' for s in template_sections)
+
+    return f"""You are a due diligence research analyst. Extract structured information from the provided documents and fill out the following DDQ sections. For each section, provide your assessment and cite which part of the source document informed your answer. If information is not available, say "Not addressed in provided documents."
+
+## DDQ Sections:
+
+{sections_text}
+
+Respond in JSON format with each section as a key (use snake_case keys: {keys_hint}), containing:
+- "assessment": your analysis (string)
+- "confidence": "high", "medium", or "low"
+- "sources": which parts of the document informed this (string)
+
+Return ONLY valid JSON, no markdown fencing or extra text."""
+
+
+def extract_ddq(anonymized_text, template_sections=None):
     """Send anonymized text to Claude for DDQ extraction."""
+    system_prompt = build_system_prompt(template_sections)
     message = client.messages.create(
         model="claude-sonnet-4-20250514",
         max_tokens=4096,
-        system=DDQ_SYSTEM_PROMPT,
+        system=system_prompt,
         messages=[
             {
                 "role": "user",

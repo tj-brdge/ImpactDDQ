@@ -9,6 +9,12 @@ async function request(path, options = {}) {
 export const api = {
   getCompanies: () => request("/companies"),
   getCompany: (id) => request(`/companies/${id}`),
+  createCompany: (data) =>
+    request("/companies", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    }),
 
   uploadDocuments: (companyId, files) => {
     const form = new FormData();
@@ -24,13 +30,14 @@ export const api = {
       body: JSON.stringify({ company_id: companyId, text }),
     }),
 
-  getSystemPrompt: () => request("/analysis/system-prompt"),
+  getSystemPrompt: (templateId) =>
+    request(`/analysis/system-prompt${templateId ? `?template_id=${templateId}` : ""}`),
 
-  runExtraction: (anonymizedText, mapping) =>
+  runExtraction: (anonymizedText, mapping, templateId) =>
     request("/analysis/extract", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ anonymized_text: anonymizedText, mapping }),
+      body: JSON.stringify({ anonymized_text: anonymizedText, mapping, template_id: templateId }),
     }),
 
   suggestTags: (ddqOutput) =>
@@ -40,7 +47,7 @@ export const api = {
       body: JSON.stringify({ ddq_output: ddqOutput }),
     }),
 
-  saveResearchOutput: (companyId, ddqOutput, sourceDocuments, analystFeedback) =>
+  saveResearchOutput: (companyId, ddqOutput, sourceDocuments, analystFeedback, templateId) =>
     request("/analysis/save", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -49,6 +56,7 @@ export const api = {
         ddq_output: ddqOutput,
         source_documents: sourceDocuments,
         analyst_feedback: analystFeedback,
+        template_id: templateId,
       }),
     }),
 
@@ -60,4 +68,22 @@ export const api = {
       body: JSON.stringify({ research_output_id: researchOutputId, tags }),
     }),
   getTagDistribution: () => request("/tags/distribution"),
+
+  // Templates
+  getTemplates: () => request("/templates"),
+  getTemplate: (id) => request(`/templates/${id}`),
+  createTemplate: (data) =>
+    request("/templates", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    }),
+  updateTemplate: (id, data) =>
+    request(`/templates/${id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    }),
+  deleteTemplate: (id) =>
+    request(`/templates/${id}`, { method: "DELETE" }),
 };
